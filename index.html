@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backgammon</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232f5d45'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23f4efe4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Backgammon</h1>
+      <p class="subtitle">Two players, one screen. Click a checker, then click where it should go.</p>
+    </header>
+
+    <section class="status-bar">
+      <div class="player-chip" id="chip-white">
+        <span class="chip-checker white"></span>
+        <span class="chip-name">White</span>
+        <span class="chip-pips" id="pips-white">167</span>
+      </div>
+      <div class="turn-indicator" id="turn-indicator">Roll to start</div>
+      <div class="player-chip" id="chip-black">
+        <span class="chip-checker black"></span>
+        <span class="chip-name">Black</span>
+        <span class="chip-pips" id="pips-black">167</span>
+      </div>
+    </section>
+
+    <section class="board-wrap">
+      <div class="board" id="board">
+        <div class="quadrant" id="quad-top-left"></div>
+        <div class="bar">
+          <div class="bar-slot" id="bar-black" data-loc="bar"></div>
+          <div class="bar-slot" id="bar-white" data-loc="bar"></div>
+        </div>
+        <div class="quadrant" id="quad-top-right"></div>
+        <div class="quadrant" id="quad-bottom-left"></div>
+        <div class="quadrant" id="quad-bottom-right"></div>
+        <div class="dice-area" id="dice-area"></div>
+      </div>
+      <div class="trays">
+        <div class="tray" id="off-black" data-loc="off"><span class="tray-label">Black off</span><div class="tray-stack"></div></div>
+        <div class="tray" id="off-white" data-loc="off"><span class="tray-label">White off</span><div class="tray-stack"></div></div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <p class="message" id="message"></p>
+      <div class="buttons">
+        <button id="btn-roll" class="btn primary">Roll dice</button>
+        <button id="btn-undo" class="btn">Undo</button>
+        <button id="btn-new" class="btn ghost">New game</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>
