@@ -185,7 +185,10 @@
 
     if (game.phase === 'opening') els.turn.textContent = 'Roll to start';
     else if (game.phase === 'roll') els.turn.textContent = capitalize(game.turn) + ' to roll';
-    else if (game.phase === 'move') els.turn.textContent = capitalize(game.turn) + ' to move';
+    else if (game.phase === 'move') {
+      els.turn.textContent = capitalize(game.turn) + ' to move' +
+        (game.bar[game.turn] > 0 ? ' (enter from the bar)' : '');
+    }
     else els.turn.textContent = 'Game over';
 
     els.roll.disabled = !(game.phase === 'opening' || game.phase === 'roll');

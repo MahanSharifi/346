@@ -281,8 +281,12 @@ body {
 }
 
 .point.movable .checker:last-child,
-.point.movable.top .checker:last-child {
+.bar-slot.movable .checker:last-child {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.45), 0 0 0 3px var(--select);
+}
+
+.bar-slot.movable {
+  background: rgba(255, 209, 102, 0.18);
 }
 
 /* ---------- Dice ---------- */
@@ -304,15 +308,16 @@ body {
 .dice-area.on-right { right: 0; }
 
 .die {
-  width: 11cqw;
-  aspect-ratio: 1;
+  --die-size: 8.5cqw;
+  width: var(--die-size);
+  height: var(--die-size);
   background: #faf7f0;
   border-radius: 14%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  padding: 14%;
+  padding: calc(var(--die-size) * 0.12);
   transition: opacity 0.2s, transform 0.2s;
 }
 
@@ -322,8 +327,8 @@ body {
 }
 
 .die .pip {
-  width: 60%;
-  aspect-ratio: 1;
+  width: calc(var(--die-size) * 0.17);
+  height: calc(var(--die-size) * 0.17);
   border-radius: 50%;
   background: #1a1612;
   place-self: center;
